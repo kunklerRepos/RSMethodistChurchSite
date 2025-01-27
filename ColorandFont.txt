@@ -1,0 +1,7 @@
+EB Garamond
+Montserrat
+
+#873F00 brown alt body
+#f39933 gold title, selected menu item
+#a67871 light beige optional
+#502337 purple alt body

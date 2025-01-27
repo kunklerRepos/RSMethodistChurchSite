@@ -7,52 +7,71 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  const [selectAbout, setSelectAbout] = useState({"setAbout": false});
+  const [selectPage, setSelectPage] = useState({"activePage": "HomeLink"});
+  const isActiveLink = {"isActive": "HomeLink"};
 
-  const isActiveLink = {"isActive": "HomeLink"}
+  const SelectPage = (pageID) => {
+     
+    let arrIDs = ["HomeLink", "AboutLink", "FaithLink", "ContactLink", "MoreLink"];
 
-  const SelectAbout = () => {
-    console.log(selectAbout);
-    let inVal = selectAbout["setAbout"] ? true : false;
+    arrIDs.forEach(id => 
+      {
+        if (id != pageID)
+        {
+          document.getElementById(id).className = "nav-link eb-garamond-Headers";
+        }
+        else 
+        {
+          document.getElementById(pageID).className = "nav-link eb-garamond-Headers active";
+        }
 
-    setSelectAbout((inVal) => selectAbout["setAbout"] = inVal);
+    });
 
-    document.getElementById(isActiveLink["isActive"]).className="nav-link";
+      setSelectPage( prevState => 
 
-    isActiveLink["isActive"] = "AboutLink";
-
-    document.getElementById("AboutLink").className="nav-link active";
-    
-    console.log(selectAbout)
+        ({...prevState, "activePage": pageID})
+      )
   }
 
-  //<img src={churchPhoto} className="logo react" alt="RSMC logo" /-->
+  // "#502337"
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">RSMC</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <a className="nav-link active" id="HomeLink" aria-current="page" href="#">Home</a>
-              <a className="nav-link" id="AboutLink" onClick={SelectAbout} href="#">About</a>
-              <a className="nav-link" id="FaithLink" href="#">Faith</a>
-              <a className="nav-link" id="ContactLink" href="#">Contact</a>
-            </div>
-          </div>
-        </div>
-      </nav>
 
-      <h1>Rising Sun Methodist Church</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fill">
+  <div class="container-fluid">
+    <a class="navbar-brand eb-garamond-Headers" href="#">RSMC</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <li className='nav-item'>
+          <a className="eb-garamond-Headers active" id="HomeLink" onClick={() => SelectPage("HomeLink")} aria-current="page" href="#">Home</a>
+        </li>
+        <li className='nav-item'>
+          <a className="eb-garamond-Headers" id="AboutLink" onClick={() => SelectPage("AboutLink")} href="#">About</a>
+        </li>
+        <li className='nav-item'>
+          <a className="eb-garamond-Headers" id="FaithLink" onClick={() => SelectPage("FaithLink")} href="#">Faith</a>
+        </li>
+        <li className='nav-item'>
+          <a className="eb-garamond-Headers" id="ContactLink" onClick={() => SelectPage("ContactLink")} href="#">Contacts</a>
+        </li>
+        <li className='nav-item'>
+          <a className="eb-garamond-Headers" id="MoreLink" onClick={() => SelectPage("MoreLink")} href="#">More</a>
+        </li>
+      </ul>
+      </div>
+    </div>
+    </nav>
+      
+      <div className="card" style={{backgroundColor: "#4C275C"}}>
+        
+        <p className='montserrat-BodyFont'>
           Welcome, this site is still under construction and will be coming online soon
+        </p>
+        <p className='montserrat-BodyFont'>
+          the active page is {selectPage["activePage"]}
         </p>
       </div>
       
