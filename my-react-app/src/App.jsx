@@ -3,12 +3,22 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import churchPhoto from './assets/church.jpg'
 import './App.css'
+import FaithConfession from './components/Faith'
+import HomePage from './components/HomeLink'
+import MoreLink from './components/MoreInfo'
+import Contact from './components/ContactPage';
+import AboutPage from './components/AboutPage'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   const [selectPage, setSelectPage] = useState({"activePage": "HomeLink"});
   const isActiveLink = {"isActive": "HomeLink"};
+
+  const PageSelectObj = {"HomeLink": <HomePage/>, "AboutLink": <AboutPage/>,
+      "FaithLink": <FaithConfession/>, "ContactLink": <Contact />, "MoreLink": <MoreLink/>
+  }
 
   const SelectPage = (pageID) => {
      
@@ -32,7 +42,9 @@ function App() {
         ({...prevState, "activePage": pageID})
       )
   }
-
+// <p className='montserrat-BodyFont'>
+//the active page is {selectPage["activePage"]}
+//</p>
   // "#502337"
   return (
     <>
@@ -66,13 +78,11 @@ function App() {
     </nav>
       
       <div className="card" style={{backgroundColor: "#4C275C"}}>
-        
+        {PageSelectObj[selectPage["activePage"]]}
         <p className='montserrat-BodyFont'>
           Welcome, this site is still under construction and will be coming online soon
         </p>
-        <p className='montserrat-BodyFont'>
-          the active page is {selectPage["activePage"]}
-        </p>
+       
       </div>
       
     </>

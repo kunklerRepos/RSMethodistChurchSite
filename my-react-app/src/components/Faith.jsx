@@ -1,4 +1,4 @@
-import 'react' from React;
+import React from "react";
 
 
 function FaithConfession()
@@ -241,6 +241,8 @@ function FaithConfession()
         but hell with its everlasting misery and separation from God is the final abode of those who neglect this
         great salvation.
         </p>
+
+
         </>
 
 
