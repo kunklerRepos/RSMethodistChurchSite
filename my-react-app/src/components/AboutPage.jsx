@@ -1,8 +1,13 @@
 import React from "react";
 
-function AboutPage()
+function AboutPage(props)
 {
-    return <h1>History of the Church</h1>;
+    return (
+        <>
+        <h1 className='eb-garamond-Headers'>History of the Church</h1>
+        <img src={props.photo} alt="history"/>
+        </>
+    ); 
 
 }
 
