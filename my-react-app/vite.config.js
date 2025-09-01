@@ -8,5 +8,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  //base: '/RSMethodistsChurchSite/'
+  base: 'https://kunklerrepos.github.io/RSMethodistChurchSite/'
 })

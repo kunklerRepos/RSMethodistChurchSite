@@ -115,26 +115,26 @@ function App() {
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
         <li className='nav-item'>
-          <a className="eb-garamond-Headers" id="HomeLink" onClick={() => SelectPage("HomeLink")} aria-current="page" href="#">Home</a>
+          <a className="eb-garamond-Headers" href="#" id="HomeLink" onClick={() => SelectPage("HomeLink")} aria-current="page">Home</a>
         </li>
         <li className='nav-item'>
-          <a className="eb-garamond-Headers" id="AboutLink" onClick={() => SelectPage("AboutLink")} href="#">History</a>
+          <a className="eb-garamond-Headers" href="#" id="AboutLink" onClick={() => SelectPage("AboutLink")}>History</a>
         </li>
         <li className='nav-item'>
-          <a className="eb-garamond-Headers" id="FaithLink" onClick={() => SelectPage("FaithLink")} href="#">Beliefs</a>
+          <a className="eb-garamond-Headers" href="#" id="FaithLink" onClick={() => SelectPage("FaithLink")}>Beliefs</a>
         </li>
         <li className='nav-item'>
-          <a className="eb-garamond-Headers" id="ContactLink" onClick={() => SelectPage("ContactLink")} href="#">Contacts</a>
+          <a className="eb-garamond-Headers" href="#" id="ContactLink" onClick={() => SelectPage("ContactLink")}>Contacts</a>
         </li>
         <li className='nav-item'>
-          <a className="eb-garamond-Headers" id="MoreLink" onClick={() => SelectPage("MoreLink")} href="#">More</a>
+          <a className="eb-garamond-Headers" href="#" id="MoreLink" onClick={() => SelectPage("MoreLink")}>Events</a>
         </li>
       </ul>
       </div>
     </div>
     </nav>
       
-      <div className="card" style={{backgroundColor: "#4C275C", justifyContent: 'center'}}>
+      <div className="card" style={{justifyContent: 'center'}}>
         {PageSelectObj[selectPage["activePage"]]}
         
        
