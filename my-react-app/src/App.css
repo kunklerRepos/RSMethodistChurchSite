@@ -41,10 +41,24 @@
   color: #888;
 }
 
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	
+	width: 75%;
+	height: 75%;
+}
+
+
 /*h1, h4, p{
   color: white;
-}*/
-
+}
+*/
 .eb-garamond-Headers {
   font-family: "EB Garamond", serif;
   font-optical-sizing: auto;
@@ -154,4 +168,18 @@ nav.fill ul li a:hover:after {
     height: 100%;
     background: #333;
   }
+}
+.react-pdf__Page__canvas {
+    margin: 0 auto;
+    width: 80% !important;
+    height: 100% !important;
+}
+
+.react-pdf__Page
+{
+  --scale-round-x: 0px !important;
+  --scale-round-y: 0px !important;
+  
+  
+
 }

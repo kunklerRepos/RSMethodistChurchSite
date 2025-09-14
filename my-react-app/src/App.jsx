@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { act, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import churchPhoto from './assets/church2.jpg'
@@ -33,6 +33,8 @@ import SecondComing from './assets/Second_Coming_of_Christ_window.jpg';
 import Resurrection from './assets/Resurrection.jpg';
 import Judgement from './assets/Last_Judgement.jpg';
 import Destiny from './assets/Ascending.jpg';
+import backgroundBible from './assets/bibleBackground.jpg';
+import backgroundWoods from './assets/backgroundWoods2.jpg';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -102,7 +104,8 @@ function App() {
       )
   }
 
-
+if(selectPage["activePage"] != "MoreLink")
+{
   return (
     <>
 
@@ -134,7 +137,7 @@ function App() {
     </div>
     </nav>
       
-      <div className="card" style={{justifyContent: 'center'}}>
+      <div className="card" id="mainDiv" style={{ height: '100%', marginTop: '10px'}}>
         {PageSelectObj[selectPage["activePage"]]}
         
        
@@ -142,6 +145,50 @@ function App() {
       
     </>
   )
+}
+else
+  {
+    return (
+    <>
+
+<nav className="navbar navbar-expand-lg navbar-light bg-light fill">
+  <div className="container-fluid">
+    <a className="navbar-brand eb-garamond-Headers" href="#">RSMC</a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <li className='nav-item'>
+          <a className="eb-garamond-Headers" href="#" id="HomeLink" onClick={() => SelectPage("HomeLink")} aria-current="page">Home</a>
+        </li>
+        <li className='nav-item'>
+          <a className="eb-garamond-Headers" href="#" id="AboutLink" onClick={() => SelectPage("AboutLink")}>History</a>
+        </li>
+        <li className='nav-item'>
+          <a className="eb-garamond-Headers" href="#" id="FaithLink" onClick={() => SelectPage("FaithLink")}>Beliefs</a>
+        </li>
+        <li className='nav-item'>
+          <a className="eb-garamond-Headers" href="#" id="ContactLink" onClick={() => SelectPage("ContactLink")}>Contacts</a>
+        </li>
+        <li className='nav-item'>
+          <a className="eb-garamond-Headers" href="#" id="MoreLink" onClick={() => SelectPage("MoreLink")}>Events</a>
+        </li>
+      </ul>
+      </div>
+    </div>
+    </nav>
+      
+      <div className="card" id="mainDiv" style={{justifyContent: 'center', backgroundColor: '#FFFFFF'}}>
+        {PageSelectObj[selectPage["activePage"]]}
+        
+       
+      </div>
+      
+    </>
+  )
+
+  }
 }
 
 export default App
