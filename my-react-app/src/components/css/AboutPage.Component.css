@@ -1,0 +1,16 @@
+.pdf-wrapper {
+  width: 100%;
+  max-width: 800px; /* Optional: max width for large screens */
+  margin: auto;
+}
+
+.react-pdf__Document {
+  display: flex;
+  justify-content: center; /* Centers the page within the wrapper */
+  max-width: 100%;
+}
+
+.react-pdf__Page canvas {
+  max-width: 100% !important;
+  height: auto !important; /* Ensures the aspect ratio is maintained */
+}

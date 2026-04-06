@@ -179,7 +179,7 @@ else
     </div>
     </nav>
       
-      <div className="card" id="mainDiv" style={{justifyContent: 'center', backgroundColor: '#FFFFFF'}}>
+      <div className="card" id="mainDiv" style={{height: '100%', backgroundColor: '#FFFFFF'}}>
         {PageSelectObj[selectPage["activePage"]]}
         
        
